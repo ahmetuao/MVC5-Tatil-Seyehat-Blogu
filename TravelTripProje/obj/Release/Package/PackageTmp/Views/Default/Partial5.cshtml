@@ -1,0 +1,22 @@
+﻿@using TravelTripProje.Models.Siniflar
+@model List<Blog>
+
+    <div class="box1-left">
+        @foreach (var x in Model)
+        {
+        <div id="box1-left-item">
+            <a href="/Blog/BlogDetay/@x.ID">
+                <div class="bot-img">
+                    <img src="@x.BlogImage" alt="" style="width:150px;height:75px;" />
+                </div>
+                <div class="bot-desc1">
+                    
+                        @x.Baslik
+                    
+                </div>
+                <div class="clear"></div>
+            </a>
+        </div>
+            
+        }
+    </div>

@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Index2";
+    Layout = "~/Views/Shared/_mainLayout2.cshtml";
+}
+<head>
+    <title>Gezi Blogum | Hakkımızda</title>
+
+</head>
+<body>
+    <div class="content">
+        <div class="wrap">
+            <div class="about" style="margin: 3rem 0 17rem 0;">
+                <h3>Hakkımızda</h3>
+                @foreach (var x in Model)
+                {
+                    <img src="@x.FotoUrl" alt="" />
+                    <p style="font-size:16px; font-weight:bold;">@x.Aciklama</p>
+                }
+            </div>
+        </div>
+    </div>
+</body>
+
+
+
+

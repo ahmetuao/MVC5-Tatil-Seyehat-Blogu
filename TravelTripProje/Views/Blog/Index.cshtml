@@ -1,0 +1,80 @@
+﻿@model TravelTripProje.Models.Siniflar.BlogYorum
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_mainLayout2.cshtml";
+}
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Gezi Blogum | Blogum</title>
+
+    <link href="~/blogTemplate/web/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/blogTemplate/web/css/style.css" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Personal Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!----webfonts---->
+    <link href='http://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet' type='text/css'>
+    <!----//webfonts---->
+
+</head>
+<body>
+    <!---header---->
+    <div class="header">
+        
+    </div>
+    <!--/header-->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-8 single-main">
+                @foreach (var x in Model.Deger1)
+                {
+                <div class="single-grid" style="margin-bottom: 3rem">
+                    <img src="@x.BlogImage" alt="" style="margin-bottom: 1rem" />
+                    <h3>
+                        <a href="/Blog/BlogDetay/@x.ID">@x.Baslik</a>
+                    </h3>
+                    <p>
+                        @x.Aciklama.Substring(0, 100)
+                    </p>
+                    <p><a href="/Blog/BlogDetay/@x.ID"><span class="read">Devamını Oku >></span></a></p>
+                </div>
+                }
+                
+            </div>  
+
+            <div class="col-md-4 side-content">
+                <div class="recent">
+                    <h2 style="margin:0;padding:0;">Son Bloglar</h2>
+                    <hr />
+                    @foreach (var y in Model.Deger3)
+                    {
+                        <ul>
+                            <li><a href="/Blog/BlogDetay/@y.ID">@y.Baslik</a></li>
+
+                        </ul>
+                    }
+
+                </div>
+                <div class="comments">
+                    <h2 style="margin:0;padding:0;">Son Yorumlar</h2>
+                    <hr />
+                    @foreach (var z in Model.Deger4)
+                    {
+                        <ul>
+                            <li><a>@z.Yorum</a></li>
+                        </ul>
+                    }
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</body>
+</html>
+
+

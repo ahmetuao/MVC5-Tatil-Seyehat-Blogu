@@ -1,0 +1,79 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    @*<title>Gezi Blogum | Home</title>*@
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="~/web/css/style.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="~/web/css/slider.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="~/web/js/jquery.min.js"></script>
+    <script src="~/web/js/responsiveslides.min.js"></script>
+
+    <script>
+        // You can also use "$(window).load(function() {"
+        $(function () {
+            // Slideshow 1
+            $("#slider1").responsiveSlides({
+                auto: true,
+                nav: true,
+                speed: 500,
+                namespace: "callbacks",
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="wrap">
+            <div class="logo" style="margin-left:-2rem;">
+                <a href="/Default/Index/" style="text-decoration:none;letter-spacing:1rem;">
+                    <h1 style="margin: 0px 0px;">GEZİ</h1>
+                    <h4 style="margin: 0px 0px 0px 5rem;color:white;">BLOGUM</h4>
+                </a>
+            </div>
+            <div class="con-right">
+                <div class="grid1-l-img">
+                    <img src="~/web/images/contact.png" />
+                </div>
+                <div class="grid1-l-desc">
+                    <p>Mezuniyet Projesi | Maltepe Üniversitesi</p>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="header-bottom">
+        <div class="wrap">
+            <ul id="nav">
+                <li><a href="/Default/Index/">Ana Sayfa</a></li>
+                <li><a class="hsubs" href="/About/Index/">Hakkımızda</a></li>
+                <li><a class="hsubs" href="/Blog/Index">Blogum</a></li>
+                <li><a class="hsubs" href="/Contact/Index/">İletişim</a></li>
+                
+                <li><a class="hsubs" href="/GirisYap/Login/">Giriş Yap</a></li>
+                <li class="text-center"><a class="hsubs" href="/Register/Index/">Kayıt Ol</a></li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div class"content">
+        @RenderBody()
+    </div>
+    <div class="footer-bottom">
+        <div class="wrap">
+            <div class="copy">
+                <p>&copy; 2021 Tatil-Seyahat. Tüm Hakları Saklıdır | Design by <strong style="font-size:16px;">Ahmet-Metehan</strong></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

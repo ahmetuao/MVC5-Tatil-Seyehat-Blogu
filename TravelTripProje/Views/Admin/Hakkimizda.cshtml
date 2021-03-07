@@ -1,0 +1,22 @@
+﻿@model TravelTripProje.Models.Siniflar.Hakkimizda
+@{
+    ViewBag.Title = "Hakkimizda";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="my-3">Hakkımızda Sayfası Güncelleme</h2>
+<br />
+@using (Html.BeginForm("HakkimizdaGuncelle", "Admin", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.ID, new { @class = "fs-5", @type="hidden" })
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" , @type="hidden"})
+    <br />
+    @Html.LabelFor(x => x.FotoUrl, new { @class = "fs-5" })
+    @Html.TextBoxFor(x => x.FotoUrl, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Aciklama, new { @class = "fs-5" })
+    @Html.TextBoxFor(x => x.Aciklama, new { @class = "form-control", @placeholder = "gg.aa.yyyy" })
+    <br />
+    <input type="submit" value="Güncelle" class="btn btn-success"/>
+
+}

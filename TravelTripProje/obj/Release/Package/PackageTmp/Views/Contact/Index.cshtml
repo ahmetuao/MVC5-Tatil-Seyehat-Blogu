@@ -1,0 +1,45 @@
+﻿@model TravelTripProje.Models.Siniflar.iletisim
+@{
+    ViewBag.Title = "YeniBlog";
+    Layout = "~/Views/Shared/_mainLayout2.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Gezi Blogum | İletişim</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>Iletisim</title>
+</head>
+<body>
+    <div class="container" style="margin: 3rem auto 20rem auto;">
+        <h2>İletişim Formu</h2>
+        <br />
+        <form class="form-group" method="post">
+            @Html.LabelFor(x => x.AdSoyad, new { @class = "fs-5", @style = "color: #9e3256" })
+            @Html.TextBoxFor(x => x.AdSoyad, new { @class = "form-control" })
+            <br />
+            @Html.LabelFor(x => x.Mail, new { @class = "fs-5", @style = "color: #9e3256" })
+            @Html.TextBoxFor(x => x.Mail, new { @class = "form-control", @type = "email", @required = "required", @placeholder = "Mailinizi Giriniz..." })
+            <br />
+            @Html.LabelFor(x => x.Konu, new { @class = "fs-5", @style = "color: #9e3256" })
+            @Html.TextBoxFor(x => x.Konu, new { @class = "form-control" })
+            <br />
+            @Html.LabelFor(x => x.Mesaj, new { @class = "fs-5", @style = "color: #9e3256" })
+            @Html.TextAreaFor(x => x.Mesaj, new { @class = "form-control", @style = "height:200px;" })
+            <br />
+            <button class="btn btn-default" style="background-color: #9e3256;color:white;">Gönder</button>
+            <div style="color: #992d51;" class="fs-5 mt-3 text-center">
+                @ViewBag.ContactInfo
+            </div>
+    </form>
+
+    </div>
+</body>
+</html>
+
+
+

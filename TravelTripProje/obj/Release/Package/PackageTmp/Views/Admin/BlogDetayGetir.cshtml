@@ -1,0 +1,27 @@
+﻿@model TravelTripProje.Models.Siniflar.Blog
+
+@{
+    ViewBag.Title = "BlogGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="my-3">Blog Detay Sayfası</h2>
+@using (Html.BeginForm("BlogDetayGetir", "Admin", FormMethod.Get))
+{
+    @Html.LabelFor(x => x.ID, new { @class = "fs-5" })
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.Baslik, new { @class = "fs-5" })
+    @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.Tarih, new { @class = "fs-5" })
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control", @placeholder = "gg.aa.yyyy", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.BlogImage, new { @class = "fs-5" })
+    @Html.TextBoxFor(x => x.BlogImage, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.Aciklama, new { @class = "fs-5" })
+    @Html.TextAreaFor(x => x.Aciklama, 15, 1, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    <a href="/Admin/Index/" class="btn btn-success">Bloglara Dön</a>
+}

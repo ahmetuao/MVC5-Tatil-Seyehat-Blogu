@@ -1,0 +1,42 @@
+﻿@model TravelTripProje.Models.Siniflar.Admin
+@{
+    ViewBag.Title = "KullaniciGetir";
+    Layout = "~/Views/Shared/_MainLayout2.cshtml";
+}
+
+<br />
+
+    <div class="container" style="margin: 6rem auto 24rem auto; width:50%;">
+        
+            <div class="card" style="background-image: url('../../webloginTema/images/head_bg.jpg');">
+                <div class="card-header text-center fs-1 text-white m-1" style="background-image: url('../../webloginTema/images/head_bg.jpg');border-bottom:1px solid white;">
+                    Kullanıcı Bilgileri
+                </div>
+                <div class="card-body m-1 p-5" style="background-image: url('../../webloginTema/images/head_bot.gif');border: 1px solid white; border-radius:5px;">
+                    @using (Html.BeginForm("updateUser", "UserInfo", FormMethod.Post))
+                    {
+                        @Html.LabelFor(x => x.ID, new { @class = "fs-5 mb-2", @style="color:#9e3256" })
+                        @Html.TextBoxFor(x => x.ID, new { @class = "form-control p-2", @readonly = "readonly", @style = "color: #9e3256; border: 3px solid #992d51;" })
+                        <br />
+                        <label class="mt-5 mb-2 fs-5" style="color: #9e3256">Kullanıcı Adı</label>
+                        @Html.TextBoxFor(x => x.Kullanici, new { @class = "form-control", @style = "color: #9e3256; border: 3px solid #992d51;" })
+
+                        <br />
+                        @Html.LabelFor(x => x.Mail, new { @class = "fs-5 mt-5 mb-2", @style = "color:#9e3256" })
+                        @Html.TextBoxFor(x => x.Mail, new { @class = "form-control", @style = "color: #9e3256; border: 3px solid #992d51;" })
+
+                        <br />
+                        @Html.LabelFor(x => x.Sifre, new { @class = "fs-5 mb-2 mt-5", @style = "color:#9e3256" })
+                        @Html.TextBoxFor(x => x.Sifre, new { @class = "form-control p-2", @type = "password", @placeholder = "Yeni Şifrenizi Giriniz...", @style = "color: #9e3256; border: 3px solid #992d51;" })
+
+                        <br />
+                        <button type="submit" class="btn mt-2 mb-5" style="background-color:#9e3256; color:white;">Bilgileri Güncelle</button>
+                        <div style="color: #9e3256;" class="fs-5 mt-3 text-center">
+                            @ViewBag.UpdateInfo
+                        </div>
+                    }
+                </div>
+            </div>
+    </div>
+}
+

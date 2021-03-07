@@ -1,0 +1,25 @@
+﻿@model TravelTripProje.Models.Siniflar.Admin
+@{
+    ViewBag.Title = "KullaniciGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="my-3">Kullanıcı Güncelleme Sayfası</h2>
+<br />
+@using (Html.BeginForm("KullaniciGuncelle", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.ID, new { @class = "fs-5" })
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.Kullanici, new { @class = "fs-5" })
+    @Html.TextBoxFor(x => x.Kullanici, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Sifre, new { @class = "fs-5" })
+    @Html.TextBoxFor(x => x.Sifre, new { @class = "form-control", @placeholder = "gg.aa.yyyy" })
+    <br />
+    @Html.LabelFor(x => x.Mail, new { @class = "fs-5" })
+    @Html.TextAreaFor(x => x.Mail, 15, 1, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Kullanıcıyı Güncelle</button>
+}
+
